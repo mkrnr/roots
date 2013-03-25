@@ -1,3 +1,11 @@
+# [My Homepage](http://mkoerner.de/)
+
+This repository is used to manage the code for my blog (http://mkoerner.de/).
+
+I guess it wont be of much interest for you. But if there is a feature on my blog that you like, have a look at my source code. Also if there is anything you don't like, please tell me. I'm new to php, html, css, and wordpress so I'm sure there is stuff that can be improved.
+
+Anyway, thanks to Ben Word and all contributors for this awesome theme!
+
 # [Roots Theme](http://www.rootstheme.com/)
 
 Roots is a starting WordPress theme made for developers that’s based on
