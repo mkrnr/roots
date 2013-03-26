@@ -1,4 +1,40 @@
 /* ==========================================================================
+   Changes by mkoerner
+   ========================================================================== */
+
+.header-images{
+padding:8px
+}
+
+.social-icons{
+float:right
+}
+
+.container i {
+float: left;
+margin: 4px;
+height: 48px;
+width: 48px;
+background-size: 48px 48px;
+}
+
+i.facebook{
+background-color:#3b5998;
+background-repeat: no-repeat;
+}
+
+i.twitter{
+background-color:#39a9e0;
+background-repeat: no-repeat;
+}
+
+i.googleplus{
+background-color: #d14836;
+background-repeat: no-repeat;
+}
+
+
+/* ==========================================================================
    Base
    ========================================================================== */
 
