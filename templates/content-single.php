@@ -8,8 +8,11 @@
       <?php the_content(); ?>
     </div>
     <footer>
-      <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
-      <?php the_tags('<ul class="entry-tags"><li>','</li><li>','</li></ul>'); ?>
+   	  <div class="entry-categories-tags">
+        <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
+      <p>Posted in: <?php the_category(','); ?></p>
+      <?php the_tags('Tagged with: ',', ',''); ?>
+      </div>
     </footer>
     <?php comments_template('/templates/comments.php'); ?>
   </article>
