@@ -16,6 +16,13 @@
   <div class="wrap container" role="document">
     <div class="content row">
       <div class="main <?php echo roots_main_class(); ?>" role="main">
+
+        <?php
+          if ( function_exists('yoast_breadcrumb') ) {
+            yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+          }
+        ?>
+
         <?php include roots_template_path(); ?>
       </div><!-- /.main -->
       <?php if (roots_display_sidebar()) : ?>
