@@ -8,6 +8,7 @@
     <?php the_content(); ?>
   </div>
   <footer>
-    <?php the_tags('<ul class="entry-tags"><li>','</li><li>','</li></ul>'); ?>
+    <p>Posted in: <?php the_category(','); ?></p>
+    <?php the_tags('Tagged with: ',', ',''); ?>
   </footer>
 </article>
