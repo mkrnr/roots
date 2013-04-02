@@ -3,9 +3,9 @@
   	<div class="header-images">
       <a href="http://localhost/wordpress/"><img src="/wordpress/assets/img/banner.png" alt="Insert image here..."></a>
 	    <div class="social-icons">
-	      <i class="facebook" title="Facebook"><a  href="http://facebook.com/koerner.martin"><img src="/wordpress/assets/img/facebook-48.png" alt="Insert image here..."></a></i>
-	    	<i class="googleplus" title="Google+"><a href="http://plus.google.com/"><img src="/wordpress/assets/img/googleplus-48.png" alt="Insert image here..."></a></i>
-	      <i class="twitter" title="Twitter"><a href="http://twitter.com"><img src="/wordpress/assets/img/twitter-48.png" alt="Insert image here..."></a></i>
+	      <i class="facebook" title="Facebook"><a  href="http://facebook.com/koerner.martin"><img src="/wordpress/assets/img/facebook-48.png" alt="fb icon"></a></i>
+	    	<i class="googleplus" title="Google+"><a href="http://plus.google.com/108176964397961024022"><img src="/wordpress/assets/img/googleplus-48.png" alt="g+ icon"></a></i>
+	      <i class="twitter" title="Twitter"><a href="http://twitter.com/mkoerner_de"><img src="/wordpress/assets/img/twitter-48.png" alt="twitter icon"></a></i>
   	  </div>
   	</div>
   </div>
