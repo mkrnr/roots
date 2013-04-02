@@ -66,6 +66,11 @@ a:focus {
   color: #284c97;
 }
 
+.entry-thumbnail {
+  margin-right: 5px;
+  margin-bottom: 3px;
+}
+
 .post{
   margin-bottom: 35px;
 }
@@ -172,7 +177,7 @@ body {
 
 .aligncenter { display: block; margin: 0 auto; }
 .alignleft { float: left; }
-.alignright { float: right; }
+.alignright { float: right; margin-left:15px; margin-bottom:10px; }
 figure.alignnone { margin-left: 0; margin-right: 0; }
 
 
