@@ -28,6 +28,8 @@
   }
 }(document,"script","twitter-wjs");</script>
 
+<script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+
 <?php
     do_action('get_header');
     // Use Bootstrap's navbar if enabled in config.php
