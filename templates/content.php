@@ -32,7 +32,7 @@
           ?>
           <div class="fb-like" data-href=<?php echo $shortlink; ?> data-send="false" data-layout="button_count" data-width="450" data-show-faces="true" data-font="arial"></div>
           <div class="g-plusone" data-href=<?php echo $shortlink; ?> data-size="medium"></div>
-          <a href="https://twitter.com/share" class="twitter-share-button" data-url=<?php echo $shortlink; ?> data-text= '<?php echo get_the_title($ID); ?> <?php echo $shortlink; ?>' data-via="mkoerner_de">Tweet</a>
+          <a href="https://twitter.com/share" class="twitter-share-button" data-url=<?php echo $shortlink; ?> data-text=<?php echo get_the_title($ID); ?> data-via="mkoerner_de">Tweet</a>
           <script type="IN/Share" data-url=<?php echo $shortlink; ?> data-counter="right"></script>
           <p>Please use this short URL for sharing: <?php echo $shortlink; ?>
         </div>

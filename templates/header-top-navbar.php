@@ -1,11 +1,10 @@
 <header class="banner navbar navbar-static-top" role="banner">
-<?php include 'yourls-signature.php'; ?>
   <div class="container">
       <div class="row-fluid">
 
         <div class="span6">
 <div class="header-images">
-<a href=<?php get_home_url(); ?>><img src="<?php get_theme_root(); ?>/assets/img/banner.png" alt="Insert image here..."></a>
+<a href=<?php echo site_url(); ?>><img src="<?php get_theme_root(); ?>/assets/img/banner.png" alt="Insert image here..."></a>
         </div>
         </div>
 
