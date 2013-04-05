@@ -16,11 +16,11 @@
         // yourls-signature.php needs to set those parameters:
         // $timestamp = time();
         // $signature = md5( $timestamp . 'your_signature_code (see Tools section in yourls)' );
+        // $api_url = 'http://<your yourls-domain>/yourls-api.php';
         include 'yourls-signature.php';
 
         // query parameters
         $format = 'simple';				// output format: 'json', 'xml' or 'simple'
-        $api_url = 'http://localhost/yourls/yourls-api.php';
 
         // request string
         $request = $api_url."?timestamp=".$timestamp."&signature=".$signature."&action=shorturl&url=".get_permalink()."&format=".$format;
