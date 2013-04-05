@@ -23,38 +23,95 @@ h6 {
 }
 
 .header-images{
-  padding: 8px;
+  margin: 8px;
 }
 
-.social-icons{
-  float: right;
-}
 
 .theme-info{
   float: right;
 }
 
 .container i {
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+  background-color: #f8f8f8;
   float: left;
-  margin: 4px;
-  height: 48px;
-  width: 48px;
-  background-size: 48px 48px;
+  background-repeat: no-repeat;
+}
+i:hover,
+i:focus {
+  background-color:#284c97 !important;
+  }
+i.right{
+  float:right;
+}
+
+i.x32{
+  margin:1px;
+  height: 32px;
+  width: 32px;
+  background-size: 32px 32px;
+}
+
+i.x64{
+  margin:2px;
+  height: 64px;
+  width: 64px;
+  background-size: 64px 64px;
+}
+
+
+
+
+i.delicious{
+  background-color: #3274d1;
+}
+
+i.email{
+  background-color: #666666;
+}
+
+i.github{
+  background-color: #4183c4;
+}
+
+i.linkedin{
+  background-color: #007fb1;
+}
+
+i.pinterest{
+  background-color: #cb2027;
+}
+
+i.reddit{
+  background-color: #ff4500;
+}
+
+i.stackoverflow{
+  background-color: #f47920;
+}
+
+i.stumbleupon{
+  background-color: #eb4924;
+}
+
+i.youtube{
+  background-color: #cd332d;
 }
 
 i.facebook{
   background-color: #3b5998;
-  background-repeat: no-repeat;
-}
-
-i.twitter{
-  background-color: #39a9e0;
-  background-repeat: no-repeat;
 }
 
 i.googleplus{
   background-color: #d14836;
-  background-repeat: no-repeat;
+}
+
+i.rss{
+  background-color: #ff8300;
+}
+
+i.twitter{
+  background-color: #39a9e0;
 }
 
 a{

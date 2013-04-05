@@ -24,7 +24,7 @@
         $api_url = 'http://localhost/yourls/yourls-api.php';
 
         // request string
-        $request = $api_url."?timestamp=".$timestamp."&signature=".$signature."&action=shorturl&url=".$_SERVER['REQUEST_URI']."&format=".$format;
+        $request = $api_url."?timestamp=".$timestamp."&signature=".$signature."&action=shorturl&url=".get_permalink()."&format=".$format;
 
         // query
         $shortlink= file_get_contents($request);
@@ -33,9 +33,9 @@
         <div class="share-buttons">
           <div class="fb-like" data-href=<?php echo $shortlink; ?> data-send="false" data-layout="button_count" data-width="450" data-show-faces="true" data-font="arial"></div>
           <div class="g-plusone" data-href=<?php echo $shortlink; ?> data-size="medium"></div>
-          <a href="https://twitter.com/share" class="twitter-share-button" data-url=<?php echo get_permalink(); ?> data-text= '<?php echo get_the_title($ID); ?> <?php echo $shortlink; ?>' data-via="mkoerner_de">Tweet</a>
-        <script type="IN/Share" data-url=<?php echo $shortlink; ?> data-counter="right"></script>
-        <p>Please use this short URL for sharing: <?php echo $shortlink; ?>
+          <a href="https://twitter.com/share" class="twitter-share-button" data-url=<?php echo $shortlink; ?> data-text= '<?php echo get_the_title($ID); ?> <?php echo $shortlink; ?>' data-via="mkoerner_de">Tweet</a>
+          <script type="IN/Share" data-url=<?php echo $shortlink; ?> data-counter="right"></script>
+          <p>Please use this short URL for sharing: <?php echo $shortlink; ?>
         </div>
       </div>
    	    <div class="entry-categories-tags">
