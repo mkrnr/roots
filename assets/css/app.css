@@ -41,24 +41,16 @@ i:hover,
 i:focus {
   background-color:#284c97 !important;
   }
-i.right{
+.right{
   float:right;
 }
 
-i.x32{
-  margin:1px;
-  height: 32px;
-  width: 32px;
-  background-size: 32px 32px;
-}
-
-i.x64{
+i.x48{
   margin:2px;
-  height: 64px;
-  width: 64px;
-  background-size: 64px 64px;
+  height: 48px;
+  width: 48px;
+  background-size: 48px 48px;
 }
-
 
 
 
