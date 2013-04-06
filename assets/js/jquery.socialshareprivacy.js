@@ -206,7 +206,7 @@
 
 
                 // var twitter_enc_uri = encodeURIComponent(uri + options.services.twitter.referrer_track);
-                var twitter_enc_url = encodeURIComponent(shorturi);
+                var twitter_enc_uri = encodeURIComponent(shorturi);
                 var twitter_code = '<iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?url=' + twitter_enc_uri + '&amp;text=' + text + '&amp;count=horizontal&amp;lang=' + options.services.twitter.language + '" style="width:130px; height:25px;"></iframe>';
                 var twitter_dummy_btn = '<img src="' + options.services.twitter.dummy_img + '" alt="&quot;Tweet this&quot;-Dummy" class="tweet_this_dummy" />';
 
