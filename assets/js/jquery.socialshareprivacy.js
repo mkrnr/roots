@@ -191,6 +191,34 @@
             }
 
             //
+            // Google+
+            //
+            if (gplus_on) {
+                // fuer G+ wird die URL nicht encoded, da das zu einem Fehler fuehrt
+                var gplus_uri = uri + options.services.gplus.referrer_track;
+
+                // we use the Google+ "asynchronous" code, standard code is flaky if inserted into dom after load
+                var gplus_code = '<div class="g-plusone" data-size="medium" data-href="' + gplus_uri + '"></div><script type="text/javascript">window.___gcfg = {lang: "' + options.services.gplus.language + '"}; (function() { var po = document.createElement("script"); po.type = "text/javascript"; po.async = true; po.src = "https://apis.google.com/js/plusone.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(po, s); })(); </script>';
+                var gplus_dummy_btn = '<img src="' + options.services.gplus.dummy_img + '" alt="&quot;Google+1&quot;-Dummy" class="gplus_one_dummy" />';
+
+                context.append('<li class="gplus help_info"><span class="info">' + options.services.gplus.txt_info + '</span><span class="switch off">' + options.services.gplus.txt_gplus_off + '</span><div class="gplusone dummy_btn">' + gplus_dummy_btn + '</div></li>');
+
+                var $container_gplus = $('li.gplus', context);
+
+                $('li.gplus div.gplusone img,li.gplus span.switch', context).live('click', function () {
+                    if ($container_gplus.find('span.switch').hasClass('off')) {
+                        $container_gplus.addClass('info_off');
+                        $container_gplus.find('span.switch').addClass('on').removeClass('off').html(options.services.gplus.txt_gplus_on);
+                        $container_gplus.find('img.gplus_one_dummy').replaceWith(gplus_code);
+                    } else {
+                        $container_gplus.removeClass('info_off');
+                        $container_gplus.find('span.switch').addClass('off').removeClass('on').html(options.services.gplus.txt_gplus_off);
+                        $container_gplus.find('.gplusone').html(gplus_dummy_btn);
+                    }
+                });
+            }
+
+            //
             // Twitter
             //
             if (twitter_on) {
@@ -223,34 +251,6 @@
                         $container_tw.removeClass('info_off');
                         $container_tw.find('span.switch').addClass('off').removeClass('on').html(options.services.twitter.txt_twitter_off);
                         $container_tw.find('.tweet').html(twitter_dummy_btn);
-                    }
-                });
-            }
-
-            //
-            // Google+
-            //
-            if (gplus_on) {
-                // fuer G+ wird die URL nicht encoded, da das zu einem Fehler fuehrt
-                var gplus_uri = uri + options.services.gplus.referrer_track;
-
-                // we use the Google+ "asynchronous" code, standard code is flaky if inserted into dom after load
-                var gplus_code = '<div class="g-plusone" data-size="medium" data-href="' + gplus_uri + '"></div><script type="text/javascript">window.___gcfg = {lang: "' + options.services.gplus.language + '"}; (function() { var po = document.createElement("script"); po.type = "text/javascript"; po.async = true; po.src = "https://apis.google.com/js/plusone.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(po, s); })(); </script>';
-                var gplus_dummy_btn = '<img src="' + options.services.gplus.dummy_img + '" alt="&quot;Google+1&quot;-Dummy" class="gplus_one_dummy" />';
-
-                context.append('<li class="gplus help_info"><span class="info">' + options.services.gplus.txt_info + '</span><span class="switch off">' + options.services.gplus.txt_gplus_off + '</span><div class="gplusone dummy_btn">' + gplus_dummy_btn + '</div></li>');
-
-                var $container_gplus = $('li.gplus', context);
-
-                $('li.gplus div.gplusone img,li.gplus span.switch', context).live('click', function () {
-                    if ($container_gplus.find('span.switch').hasClass('off')) {
-                        $container_gplus.addClass('info_off');
-                        $container_gplus.find('span.switch').addClass('on').removeClass('off').html(options.services.gplus.txt_gplus_on);
-                        $container_gplus.find('img.gplus_one_dummy').replaceWith(gplus_code);
-                    } else {
-                        $container_gplus.removeClass('info_off');
-                        $container_gplus.find('span.switch').addClass('off').removeClass('on').html(options.services.gplus.txt_gplus_off);
-                        $container_gplus.find('.gplusone').html(gplus_dummy_btn);
                     }
                 });
             }
