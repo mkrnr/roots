@@ -2,13 +2,13 @@
   <div class="container">
       <div class="row">
 
-        <div class="span8">
+        <div class="span6">
 <div class="header-images">
 <a href=<?php echo site_url(); ?>><img src="<?php get_theme_root(); ?>/assets/img/banner.png" alt="Insert image here..."></a>
         </div>
         </div>
 
-        <div class="span4">
+        <div class="span6">
 
         <div class="header-images right">
 

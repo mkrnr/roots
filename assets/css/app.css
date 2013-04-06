@@ -166,9 +166,6 @@ ul{
   width: 450px;
 }
 
-.footer{
-  padding: 4px;
-}
 
 /* ==========================================================================
    Base
@@ -226,7 +223,7 @@ body {
 .hentry time { }
 .hentry .byline { }
 .hentry .entry-content { }
-.hentry footer { }
+.hentry footer {padding: 5px 0px 3px 0px; }
 
 
 
