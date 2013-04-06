@@ -22,7 +22,7 @@
                     <i class="linkedin x32 right" title="LinkedIn"><a  href="http://mkrnr.de/linkedin"><img src="<?php get_theme_root(); ?>/assets/img/linkedin-32.png" alt="icon"></a></i>
 </div>
       <div class="row-fluid">
-                    <i class="rss x64 right" title="RSS"><a href="<?php get_home_url(); ?>/feed"><img src="<?php get_theme_root(); ?>/assets/img/rss-64.png" alt="icon"></a></i>
+                    <i class="rss x64 right" title="RSS"><a href="http://feeds.feedburner.com/mkoerner"><img src="<?php get_theme_root(); ?>/assets/img/rss-64.png" alt="icon"></a></i>
 	                  <i class="twitter x64 right" title="Twitter"><a href="http://mkrnr.de/twitter"><img src="<?php get_theme_root(); ?>/assets/img/twitter-64.png" alt="icon"></a></i>
 	                  <i class="googleplus x64 right" title="Google+"><a href="http://mkrnr.de/googleplus"><img src="<?php get_theme_root(); ?>/assets/img/googleplus-64.png" alt="icon"></a></i>
                     <i class="facebook x64 right" title="Facebook"><a  href="http://mkrnr.de/facebook"><img src="<?php get_theme_root(); ?>/assets/img/facebook-64.png" alt="icon"></a></i>
