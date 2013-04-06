@@ -28,7 +28,7 @@
           },
           twitter : {
             'dummy_img' : "<?php get_theme_root(); ?>/assets/css/images/dummy_twitter.png",
-            'tweet_text' : "<?php echo get_the_title($ID); ?> <?php echo $shortlink; ?>"
+            'tweet_text' : "<?php echo get_the_title($ID); ?>"
           }
         },
         'css_path' : "<?php get_theme_root(); ?>/assets/css/socialshareprivacy.css",
