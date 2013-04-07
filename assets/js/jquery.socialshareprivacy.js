@@ -95,17 +95,6 @@
                     'language'          : 'en_US',
                     'action'            : 'recommend'
                 },
-                'gplus' : {
-                    'status'            : 'on',
-                    'dummy_img'         : 'socialshareprivacy/images/dummy_gplus.png',
-                    'txt_info'          : '',
-                    'txt_gplus_off'     : '',
-                    'txt_gplus_on'      : '',
-                    'perma_option'      : 'on',
-                    'display_name'      : 'Google+',
-                    'referrer_track'    : '',
-                    'language'          : 'en'
-                },
                 'twitter' : {
                     'status'            : 'on',
                     'dummy_img'         : 'socialshareprivacy/images/dummy_twitter.png',
@@ -116,6 +105,17 @@
                     'display_name'      : 'Twitter',
                     'referrer_track'    : '',
                     'tweet_text'        : getTweetText,
+                    'language'          : 'en'
+                },
+                'gplus' : {
+                    'status'            : 'on',
+                    'dummy_img'         : 'socialshareprivacy/images/dummy_gplus.png',
+                    'txt_info'          : '',
+                    'txt_gplus_off'     : '',
+                    'txt_gplus_on'      : '',
+                    'perma_option'      : 'on',
+                    'display_name'      : 'Google+',
+                    'referrer_track'    : '',
                     'language'          : 'en'
                 }
             },
@@ -134,11 +134,11 @@
         var options = $.extend(true, defaults, settings);
 
         var facebook_on = (options.services.facebook.status === 'on');
-        var gplus_on    = (options.services.gplus.status    === 'on');
         var twitter_on  = (options.services.twitter.status  === 'on');
+        var gplus_on    = (options.services.gplus.status    === 'on');
 
         // check if at least one service is "on"
-        if (!facebook_on && !gplus_on && !twitter_on) {
+        if (!facebook_on && !twitter_on && !gplus_on) {
             return;
         }
 
@@ -191,34 +191,6 @@
             }
 
             //
-            // Google+
-            //
-            if (gplus_on) {
-                // fuer G+ wird die URL nicht encoded, da das zu einem Fehler fuehrt
-                var gplus_uri = uri + options.services.gplus.referrer_track;
-
-                // we use the Google+ "asynchronous" code, standard code is flaky if inserted into dom after load
-                var gplus_code = '<div class="g-plusone" data-size="medium" data-href="' + gplus_uri + '"></div><script type="text/javascript">window.___gcfg = {lang: "' + options.services.gplus.language + '"}; (function() { var po = document.createElement("script"); po.type = "text/javascript"; po.async = true; po.src = "https://apis.google.com/js/plusone.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(po, s); })(); </script>';
-                var gplus_dummy_btn = '<img src="' + options.services.gplus.dummy_img + '" alt="&quot;Google+1&quot;-Dummy" class="gplus_one_dummy" />';
-
-                context.append('<li class="gplus help_info"><span class="info">' + options.services.gplus.txt_info + '</span><span class="switch off">' + options.services.gplus.txt_gplus_off + '</span><div class="gplusone dummy_btn">' + gplus_dummy_btn + '</div></li>');
-
-                var $container_gplus = $('li.gplus', context);
-
-                $('li.gplus div.gplusone img,li.gplus span.switch', context).live('click', function () {
-                    if ($container_gplus.find('span.switch').hasClass('off')) {
-                        $container_gplus.addClass('info_off');
-                        $container_gplus.find('span.switch').addClass('on').removeClass('off').html(options.services.gplus.txt_gplus_on);
-                        $container_gplus.find('img.gplus_one_dummy').replaceWith(gplus_code);
-                    } else {
-                        $container_gplus.removeClass('info_off');
-                        $container_gplus.find('span.switch').addClass('off').removeClass('on').html(options.services.gplus.txt_gplus_off);
-                        $container_gplus.find('.gplusone').html(gplus_dummy_btn);
-                    }
-                });
-            }
-
-            //
             // Twitter
             //
             if (twitter_on) {
@@ -256,6 +228,34 @@
             }
 
             //
+            // Google+
+            //
+            if (gplus_on) {
+                // fuer G+ wird die URL nicht encoded, da das zu einem Fehler fuehrt
+                var gplus_uri = uri + options.services.gplus.referrer_track;
+
+                // we use the Google+ "asynchronous" code, standard code is flaky if inserted into dom after load
+                var gplus_code = '<div class="g-plusone" data-size="medium" data-href="' + gplus_uri + '"></div><script type="text/javascript">window.___gcfg = {lang: "' + options.services.gplus.language + '"}; (function() { var po = document.createElement("script"); po.type = "text/javascript"; po.async = true; po.src = "https://apis.google.com/js/plusone.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(po, s); })(); </script>';
+                var gplus_dummy_btn = '<img src="' + options.services.gplus.dummy_img + '" alt="&quot;Google+1&quot;-Dummy" class="gplus_one_dummy" />';
+
+                context.append('<li class="gplus help_info"><span class="info">' + options.services.gplus.txt_info + '</span><span class="switch off">' + options.services.gplus.txt_gplus_off + '</span><div class="gplusone dummy_btn">' + gplus_dummy_btn + '</div></li>');
+
+                var $container_gplus = $('li.gplus', context);
+
+                $('li.gplus div.gplusone img,li.gplus span.switch', context).live('click', function () {
+                    if ($container_gplus.find('span.switch').hasClass('off')) {
+                        $container_gplus.addClass('info_off');
+                        $container_gplus.find('span.switch').addClass('on').removeClass('off').html(options.services.gplus.txt_gplus_on);
+                        $container_gplus.find('img.gplus_one_dummy').replaceWith(gplus_code);
+                    } else {
+                        $container_gplus.removeClass('info_off');
+                        $container_gplus.find('span.switch').addClass('off').removeClass('on').html(options.services.gplus.txt_gplus_off);
+                        $container_gplus.find('.gplusone').html(gplus_dummy_btn);
+                    }
+                });
+            }
+
+            //
             // Der Info/Settings-Bereich wird eingebunden
             //
             context.append('<li class="settings_info"><div class="settings_info_menu off perma_option_off"><a href="' + options.info_link + '"><span class="help_info icon"><span class="info">' + options.txt_help + '</span></span></a></div></li>');
@@ -275,14 +275,14 @@
             });
 
             var facebook_perma = (options.services.facebook.perma_option === 'on');
-            var gplus_perma    = (options.services.gplus.perma_option    === 'on');
             var twitter_perma  = (options.services.twitter.perma_option  === 'on');
+            var gplus_perma    = (options.services.gplus.perma_option    === 'on');
 
             // Menue zum dauerhaften Einblenden der aktiven Dienste via Cookie einbinden
             // Die IE7 wird hier ausgenommen, da er kein JSON kann und die Cookies hier ueber JSON-Struktur abgebildet werden
             if (((facebook_on && facebook_perma)
-                || (gplus_on && gplus_perma)
-                || (twitter_on && twitter_perma))
+                || (twitter_on && twitter_perma)
+                || (gplus_on && gplus_perma))
                     && (!$.browser.msie || ($.browser.msie && $.browser.version > 7.0))) {
 
                 // Cookies abrufen
@@ -320,21 +320,21 @@
                     );
                 }
 
-                if (gplus_on && gplus_perma) {
-                    var perma_status_gplus = cookies.socialSharePrivacy_gplus === 'perma_on' ? checked : '';
-                    $container_settings_info.find('form fieldset').append(
-                        '<input type="checkbox" name="perma_status_gplus" id="perma_status_gplus"'
-                            + perma_status_gplus + ' /><label for="perma_status_gplus">'
-                            + options.services.gplus.display_name + '</label>'
-                    );
-                }
-
                 if (twitter_on && twitter_perma) {
                     var perma_status_twitter = cookies.socialSharePrivacy_twitter === 'perma_on' ? checked : '';
                     $container_settings_info.find('form fieldset').append(
                         '<input type="checkbox" name="perma_status_twitter" id="perma_status_twitter"'
                             + perma_status_twitter + ' /><label for="perma_status_twitter">'
                             + options.services.twitter.display_name + '</label>'
+                    );
+                }
+
+                if (gplus_on && gplus_perma) {
+                    var perma_status_gplus = cookies.socialSharePrivacy_gplus === 'perma_on' ? checked : '';
+                    $container_settings_info.find('form fieldset').append(
+                        '<input type="checkbox" name="perma_status_gplus" id="perma_status_gplus"'
+                            + perma_status_gplus + ' /><label for="perma_status_gplus">'
+                            + options.services.gplus.display_name + '</label>'
                     );
                 }
 
@@ -371,11 +371,11 @@
                 if (facebook_on && facebook_perma && cookies.socialSharePrivacy_facebook === 'perma_on') {
                     $('li.facebook span.switch', context).click();
                 }
-                if (gplus_on && gplus_perma && cookies.socialSharePrivacy_gplus === 'perma_on') {
-                    $('li.gplus span.switch', context).click();
-                }
                 if (twitter_on && twitter_perma && cookies.socialSharePrivacy_twitter === 'perma_on') {
                     $('li.twitter span.switch', context).click();
+                }
+                if (gplus_on && gplus_perma && cookies.socialSharePrivacy_gplus === 'perma_on') {
+                    $('li.gplus span.switch', context).click();
                 }
             }
         }); // this.each(function ()

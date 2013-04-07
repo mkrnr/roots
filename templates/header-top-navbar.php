@@ -9,8 +9,8 @@
       <div class="span6">
         <div class="header-images right">
           <i class="facebook x48" title="Facebook"><a  href="http://mkrnr.de/facebook"><img src="<?php get_theme_root(); ?>/assets/img/facebook-48.png" alt="icon"></a></i>
-	        <i class="googleplus x48" title="Google+"><a href="http://mkrnr.de/googleplus"><img src="<?php get_theme_root(); ?>/assets/img/googleplus-48.png" alt="icon"></a></i>
 	        <i class="twitter x48" title="Twitter"><a href="http://mkrnr.de/twitter"><img src="<?php get_theme_root(); ?>/assets/img/twitter-48.png" alt="icon"></a></i>
+	        <i class="googleplus x48" title="Google+"><a href="http://mkrnr.de/googleplus"><img src="<?php get_theme_root(); ?>/assets/img/googleplus-48.png" alt="icon"></a></i>
           <i class="rss x48" title="RSS"><a href="http://feeds.feedburner.com/mkoerner"><img src="<?php get_theme_root(); ?>/assets/img/rss-48.png" alt="icon"></a></i>
         </div>
       </div>
