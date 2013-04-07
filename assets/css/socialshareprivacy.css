@@ -24,6 +24,7 @@
     overflow: hidden;
     height: inherit;
     width: inherit;
+    margin-top: 1.3px;
 }
 /* Facebook begin */
 .social_share_privacy_area .facebook {
@@ -45,9 +46,11 @@
 /* Google+ begin */
 .social_share_privacy_area .gplus {
 	width: 123px;
+  line-height: 120% !important;
 }
 .social_share_privacy_area li div.gplusone {
 	width: 90px;
+    margin-top: 1px !important;
 }
 /* Google+ end */
 /* Switch begin */
