@@ -131,6 +131,9 @@ a:focus {
   border-width: 1px;
   border-color: #d4d4d4;
  }
+.box-select{
+  vertical-align: middle;
+}
 
 .sidebar-info{
   padding-bottom: 1px;

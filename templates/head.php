@@ -11,6 +11,13 @@
   <?php wp_head(); ?>
 
   <link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo('name'); ?> Feed" href="<?php echo home_url(); ?>/feed/">
+  <script language="JavaScript">
+    function selectText(textField)
+    {
+      textField.focus();
+      textField.select();
+    }
+  </script>
   <script type="text/javascript" src="<?php get_theme_root(); ?>/assets/js/jquery.js"></script>
   <script type="text/javascript" src="<?php get_theme_root(); ?>/assets/js/jquery.socialshareprivacy.js"></script>
   <?php include 'yourls-signature.php'; ?>

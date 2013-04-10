@@ -17,9 +17,14 @@
               <div id="socialshareprivacy"></div>
             </div>
           </div>
+          <div class="row-fluid">
+            <div class="span12 box-select">
           <?php include 'yourls-signature.php'; ?>
-          <p>You can use this short URL for sharing: <?php echo $shortlink; ?></p>
+          You can use this short URL for sharing: <input type="text" value="<?php echo $shortlink; ?>" onClick='selectText(this);'>
+
         </div>
+            </div>
+          </div>
       </div>
    	    <div class="entry-categories-tags">
            <p>Posted in: <?php the_category(','); ?>  <?php the_tags('Tagged with: ',', ',''); ?></p>
