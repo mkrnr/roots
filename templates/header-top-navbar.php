@@ -31,8 +31,8 @@
         ?>
         <form method="get" id="searchform" action="<?php bloginfo('url'); ?>/" class="form-search navbar-search pull-right">
           <div class="input-append">
-            <input type="text" name="s" id="s" class="span3 search-query" placeholder="Search mkoerner.de">
-            <button class="btn" type="submit">Search</button>
+            <input type="text" name="s" id="s" class="input-medium search-query" placeholder="Search mkoerner.de">
+            <button class="btn" type="submit">Go!</button>
           </div>
         </form>
       </nav>

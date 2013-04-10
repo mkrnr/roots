@@ -2,6 +2,6 @@
   <label class="hide" for="s"><?php _e('Search for:', 'roots'); ?></label>
   <div class="input-append">
     <input type="text" value="<?php if (is_search()) { echo get_search_query(); } ?>" name="s" id="s" class="search-query" placeholder="<?php _e('Search', 'roots'); ?> <?php bloginfo('name'); ?>">
-    <input type="submit" id="searchsubmit" value="<?php _e('Search', 'roots'); ?>" class="btn">
+    <input type="submit" id="searchsubmit" value="<?php _e('Go!', 'roots'); ?>" class="btn">
   </div>
 </form>
