@@ -20,7 +20,7 @@
           <div class="row-fluid">
             <div class="span12">
           <?php include 'yourls-signature.php'; ?>
-          You can use this short URL for sharing: <input type="text" id="box-select" value="<?php echo $shortlink; ?>" onClick='selectText(this);'>
+          You can use this short URL for sharing: <input type="text" id="box-select" readonly value="<?php echo $shortlink; ?>" onClick='selectText(this);'>
         </div>
             </div>
           </div>
