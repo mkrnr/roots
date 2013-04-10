@@ -131,8 +131,11 @@ a:focus {
   border-width: 1px;
   border-color: #d4d4d4;
  }
-.box-select{
-  vertical-align: middle;
+
+#box-select{
+  width: 150px;
+  margin-bottom: 6px;
+  margin-top: 4px;
 }
 
 .sidebar-info{
@@ -150,7 +153,7 @@ a:focus {
 }
 
 .share-buttons{
-  margin: 10px 10px 10px 10px;
+  margin: 10px 10px 5px 10px;
   text-align: left;
 }
 .entry-categories-tags{
