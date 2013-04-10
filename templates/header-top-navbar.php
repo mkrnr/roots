@@ -29,8 +29,11 @@
             wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav'));
           endif;
         ?>
-        <form method="get" id="searchform" action="<?php bloginfo('url'); ?>/" class="navbar-search pull-right">
-          <input type="text" name="s" id="s" class="search-query" placeholder="Search mkoerner.de">
+        <form method="get" id="searchform" action="<?php bloginfo('url'); ?>/" class="form-search navbar-search pull-right">
+          <div class="input-append">
+            <input type="text" name="s" id="s" class="span3 search-query" placeholder="Search mkoerner.de">
+            <button class="btn" type="submit">Search</button>
+          </div>
         </form>
       </nav>
     </div>
