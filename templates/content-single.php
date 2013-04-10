@@ -17,13 +17,9 @@
               <div id="socialshareprivacy"></div>
             </div>
           </div>
-          <div class="row-fluid">
-            <div class="span12">
           <?php include 'yourls-signature.php'; ?>
           You can use this short URL for sharing: <input type="text" id="box-select" value="<?php echo $shortlink; ?>" onClick='selectText(this);'>
         </div>
-            </div>
-          </div>
       </div>
    	    <div class="entry-categories-tags">
            <p>Posted in: <?php the_category(','); ?>  <?php the_tags('Tagged with: ',', ',''); ?></p>
