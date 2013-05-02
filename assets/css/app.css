@@ -164,7 +164,7 @@ a:focus {
   font-style: italic;
   padding-top: 5px;
 }
-ul{
+.sidebar ul{
   margin-left: 0px;
   list-style-type: none ;
 }
