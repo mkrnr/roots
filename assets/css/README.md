@@ -1,4 +1,4 @@
-Since I am currently too lazy to use less, I've used the customize feature of bootstrap which can be found here:
+I've used the customize feature of bootstrap which can be found here:
 
 http://twitter.github.com/bootstrap/customize.html
 
@@ -33,8 +33,6 @@ No changes
 ####Form states & alerts
 
 ####Navbar
-
-@navbarCollapseWidth  767px
 
 ####Dropdowns
 

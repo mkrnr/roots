@@ -10,20 +10,25 @@
     </div>
     <footer>
       <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
-      <div class="box-colored">
+      <div class="box-colored img-rounded">
         <div class="share-buttons">
-          <div class="row-fluid">
-            <div class="span12">
+          <div class="row">
+            <div class="col-xs-12">
               <div id="socialshareprivacy"></div>
+                <?php include 'yourls-signature.php'; ?>
+              </div>
             </div>
+            <form role="form">
+              <div class="form-inline">
+                You can use this short URL for sharing:
+                <input class="form-control" type="text" id="box-select" value="<?php echo $shortlink; ?>" onClick='selectText(this);'>
+              </div>
+            </form>
           </div>
-          <?php include 'yourls-signature.php'; ?>
-          You can use this short URL for sharing: <input type="text" id="box-select" value="<?php echo $shortlink; ?>" onClick='selectText(this);'>
         </div>
+   	  <div class="entry-categories-tags">
+         <p>Posted in: <?php the_category(','); ?>  <?php the_tags('Tagged with: ',', ',''); ?></p>
       </div>
-   	    <div class="entry-categories-tags">
-           <p>Posted in: <?php the_category(','); ?>  <?php the_tags('Tagged with: ',', ',''); ?></p>
-        </div>
     <?php related_posts(); ?>
     </footer>
     <?php comments_template('/templates/comments.php'); ?>

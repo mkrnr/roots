@@ -4,7 +4,6 @@
  */
 add_theme_support('root-relative-urls');    // Enable relative URLs
 add_theme_support('rewrites');              // Enable URL rewrites
-add_theme_support('h5bp-htaccess');         // Enable HTML5 Boilerplate's .htaccess
 add_theme_support('bootstrap-top-navbar');  // Enable Bootstrap's top navbar
 add_theme_support('bootstrap-gallery');     // Enable Bootstrap's thumbnails component on [gallery]
 add_theme_support('nice-search');           // Enable /?s= to /search/ redirect
@@ -16,7 +15,7 @@ add_theme_support('post-thumbnails');
  * Configuration values
  */
 define('GOOGLE_ANALYTICS_ID', ''); // UA-XXXXX-Y
-define('POST_EXCERPT_LENGTH', 40);
+define('POST_EXCERPT_LENGTH', 40); // length in words for excerpt_length filter (ref: http://codex.wordpress.org/Plugin_API/Filter_Reference/excerpt_length)
 
 /**
  * .main classes
@@ -24,10 +23,10 @@ define('POST_EXCERPT_LENGTH', 40);
 function roots_main_class() {
   if (roots_display_sidebar()) {
     // Classes on pages with the sidebar
-    $class = 'span8';
+    $class = 'col-sm-8';
   } else {
     // Classes on full width pages
-    $class = 'span12';
+    $class = 'col-sm-12';
   }
 
   return $class;
@@ -37,7 +36,7 @@ function roots_main_class() {
  * .sidebar classes
  */
 function roots_sidebar_class() {
-  return 'span4';
+  return 'col-sm-4';
 }
 
 /**
@@ -66,11 +65,11 @@ function roots_display_sidebar() {
      * Any of these page templates that return true won't show the sidebar
      */
     array(
-      'page-custom.php', 'page-rebelmouse.php'
+      'page-custom.php', 'page-rebelmouse.php', 'template-custom.php'
     )
   );
 
-  return $sidebar_config->display;
+  return apply_filters('roots_display_sidebar', $sidebar_config->display);
 }
 
 /**
@@ -78,6 +77,16 @@ function roots_display_sidebar() {
  * and media embeds (in pixels).
  *
  * Example: If the content area is 640px wide, set $content_width = 620; so images and videos will not overflow.
- * Default: 940px is the default Bootstrap container width.
+ * Default: 1140px is the default Bootstrap container width.
  */
-if (!isset($content_width)) { $content_width = 940; }
+if (!isset($content_width)) { $content_width = 1140; }
+
+/**
+ * Define helper constants
+ */
+$get_theme_name = explode('/themes/', get_template_directory());
+
+define('RELATIVE_PLUGIN_PATH',  str_replace(home_url() . '/', '', plugins_url()));
+define('RELATIVE_CONTENT_PATH', str_replace(home_url() . '/', '', content_url()));
+define('THEME_NAME',            next($get_theme_name));
+define('THEME_PATH',            RELATIVE_CONTENT_PATH . '/themes/' . THEME_NAME);
