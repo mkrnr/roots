@@ -203,7 +203,7 @@
 
                 var twitter_enc_uri = encodeURIComponent(uri + options.services.twitter.referrer_track);
                 var twitter_enc_uri_short = encodeURIComponent(shorturi);
-                var twitter_code = '<iframe allowtransparency="true" frameborder="0" scrolling="no" src    ="http://platform.twitter.com/widgets/tweet_button.html?url=' + twitter_enc_uri_short + '&amp;counturl=' + twitter_enc_uri + '&amp;text=' + text + '&amp;count=horizontal&amp;lang=' + options.services.twitte    r.language + '" style="width:130px; height:25px;"></iframe>';
+                var twitter_code = '<iframe allowtransparency="true" frameborder="0" scrolling="no" src    ="http://platform.twitter.com/widgets/tweet_button.html?url=' + twitter_enc_uri_short + '&amp;counturl=' + twitter_enc_uri + '&amp;text=' + text + '&amp;count=horizontal&amp;lang=' + options.services.twitter.language + '" style="width:130px; height:25px;"></iframe>';
                 var twitter_dummy_btn = '<img src="' + options.services.twitter.dummy_img + '" alt="&quot;Tweet this&quot;-Dummy" class="tweet_this_dummy" />';
 
                 context.append('<li class="twitter help_info"><span class="info">' + options.services.twitter.txt_info + '</span><span class="switch off">' + options.services.twitter.txt_twitter_off + '</span><div class="tweet dummy_btn">' + twitter_dummy_btn + '</div></li>');
