@@ -201,13 +201,9 @@
                 // 120 is the max character count left after twitters automatic url shortening with t.co
                 text = abbreviateText(text, '120');
 
-
-
-
-
-                // var twitter_enc_uri = encodeURIComponent(uri + options.services.twitter.referrer_track);
-                var twitter_enc_uri = encodeURIComponent(shorturi);
-                var twitter_code = '<iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?url=' + twitter_enc_uri + '&amp;text=' + text + '&amp;count=horizontal&amp;lang=' + options.services.twitter.language + '" style="width:130px; height:25px;"></iframe>';
+                var twitter_enc_uri = encodeURIComponent(uri + options.services.twitter.referrer_track);
+                var twitter_enc_uri_short = encodeURIComponent(shorturi);
+                var twitter_code = '<iframe allowtransparency="true" frameborder="0" scrolling="no" src    ="http://platform.twitter.com/widgets/tweet_button.html?url=' + twitter_enc_uri_short + '&amp;counturl=' + twitter_enc_uri + '&amp;text=' + text + '&amp;count=horizontal&amp;lang=' + options.services.twitte    r.language + '" style="width:130px; height:25px;"></iframe>';
                 var twitter_dummy_btn = '<img src="' + options.services.twitter.dummy_img + '" alt="&quot;Tweet this&quot;-Dummy" class="tweet_this_dummy" />';
 
                 context.append('<li class="twitter help_info"><span class="info">' + options.services.twitter.txt_info + '</span><span class="switch off">' + options.services.twitter.txt_twitter_off + '</span><div class="tweet dummy_btn">' + twitter_dummy_btn + '</div></li>');
@@ -215,15 +211,15 @@
                 var $container_tw = $('li.twitter', context);
 
                 $('li.twitter div.tweet img,li.twitter span.switch', context).live('click', function () {
-                    if ($container_tw.find('span.switch').hasClass('off')) {
-                        $container_tw.addClass('info_off');
-                        $container_tw.find('span.switch').addClass('on').removeClass('off').html(options.services.twitter.txt_twitter_on);
-                        $container_tw.find('img.tweet_this_dummy').replaceWith(twitter_code);
-                    } else {
-                        $container_tw.removeClass('info_off');
-                        $container_tw.find('span.switch').addClass('off').removeClass('on').html(options.services.twitter.txt_twitter_off);
-                        $container_tw.find('.tweet').html(twitter_dummy_btn);
-                    }
+                   if ($container_tw.find('span.switch').hasClass('off')) {
+                       $container_tw.addClass('info_off');
+                       $container_tw.find('span.switch').addClass('on').removeClass('off').html(options.services.twitter.txt_twitter_on);
+                       $container_tw.find('img.tweet_this_dummy').replaceWith(twitter_code);
+                   } else {
+                       $container_tw.removeClass('info_off');
+                       $container_tw.find('span.switch').addClass('off').removeClass('on').html(options.services.twitter.txt_twitter_off);
+                       $container_tw.find('.tweet').html(twitter_dummy_btn);
+                   }
                 });
             }
 
