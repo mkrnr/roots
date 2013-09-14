@@ -23,7 +23,7 @@ function custom_breadcrumb() {
 	if(!is_home()) {
 		echo '<ol class="breadcrumb box-colored">';
 		echo '<li><a href="'.get_option('home').'">Home</a></li>';
-		if (is_category() || is_single()) {
+		if (is_single()) {
       echo '<li>';
       the_category(', ');
       echo '</li>';
@@ -32,7 +32,11 @@ function custom_breadcrumb() {
         the_title();
         echo '</li>';
       }
-		} elseif (is_page()) {
+    } elseif (is_category()) {
+      echo '<li>';
+      single_cat_title();
+      echo '</li>';
+    } elseif (is_page()) {
       echo '<li>';
       the_title();
       echo '</li>';
@@ -53,7 +57,7 @@ function custom_breadcrumb() {
       the_time('Y');
       echo'</li>';
     } elseif (is_author()) {
-      echo"<li>Author Archive";
+      echo"<li>Author Archives";
       echo'</li>';
     } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
       echo "<li>Blog Archives";
