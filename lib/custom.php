@@ -20,10 +20,10 @@ add_filter( 'excerpt_more', 'new_excerpt_more' );
  *
  */
 function custom_breadcrumb() {
-	if(!is_home()) {
-		echo '<ol class="breadcrumb box-colored">';
-		echo '<li><a href="'.get_option('home').'">Home</a></li>';
-		if (is_single()) {
+  if(!is_home()) {
+    echo '<ol class="breadcrumb box-colored">';
+    echo '<li><a href="'.get_option('home').'">Home</a></li>';
+    if (is_single()) {
       echo '<li>';
       the_category(', ');
       echo '</li>';
@@ -40,35 +40,33 @@ function custom_breadcrumb() {
       echo '<li>';
       the_title();
       echo '</li>';
-		} elseif (is_tag()) {
+    } elseif (is_tag()) {
       echo '<li>Tag: ';
       single_tag_title();
       echo '</li>';
     } elseif (is_day()) {
-      echo"<li>Archive for ";
+      echo'<li>Archive for ';
       the_time('F jS, Y');
       echo'</li>';
     } elseif (is_month()) {
-      echo"<li>Archive for ";
+      echo'<li>Archive for ';
       the_time('F, Y');
       echo'</li>';
     } elseif (is_year()) {
-      echo"<li>Archive for ";
+      echo'<li>Archive for ';
       the_time('Y');
       echo'</li>';
     } elseif (is_author()) {
-      echo"<li>Author Archives";
+      echo'<li>Author Archives';
       echo'</li>';
     } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
-      echo "<li>Blog Archives";
+      echo '<li>Blog Archives';
       echo'</li>';
     } elseif (is_search()) {
-      echo"<li>Search Results";
+      echo'<li>Search Results';
       echo'</li>';
     }
-		echo '</ol>';
-	}
+    echo '</ol>';
+  }
 }
-
-
 ?>
