@@ -17,8 +17,8 @@
     <div class="content row">
       <div class="main <?php echo roots_main_class(); ?>" role="main">
         <?php
-          if ( function_exists('yoast_breadcrumb') ) {
-            yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+          if ( function_exists('custom_breadcrumb') ) {
+            custom_breadcrumb();
           }
         ?>
         <?php include roots_template_path(); ?>

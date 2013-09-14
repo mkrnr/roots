@@ -13,4 +13,5 @@
            <p>Posted in: <?php the_category(','); ?>  <?php the_tags('Tagged with: ',', ',''); ?></p>
         </div>
   </footer>
+  <hr>
 </article>
