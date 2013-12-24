@@ -28,8 +28,8 @@
       textField.select();
     }
   </script>
-  <script type="text/javascript" src="<?php get_theme_root(); ?>/assets/js/jquery.js"></script>
-  <script type="text/javascript" src="<?php get_theme_root(); ?>/assets/js/jquery.socialshareprivacy.js"></script>
+<script type="text/javascript" src="<?php echo home_url(); ?>/assets/js/jquery.js"></script>
+  <script type="text/javascript" src="<?php echo home_url(); ?>/assets/js/jquery.socialshareprivacy.js"></script>
   <?php include 'yourls-signature.php'; ?>
   <script type="text/javascript">
   jQuery(document).ready(function($){
@@ -37,18 +37,18 @@
       $('#socialshareprivacy').socialSharePrivacy({
         services : {
           facebook : {
-            'dummy_img' : "<?php get_theme_root(); ?>/assets/css/images/dummy_facebook.png",
+            'dummy_img' : "<?php echo home_url(); ?>/assets/css/images/dummy_facebook.png",
             'action' : 'like'
           },
           gplus : {
-            'dummy_img' : "<?php get_theme_root(); ?>/assets/css/images/dummy_gplus.png"
+            'dummy_img' : "<?php echo home_url(); ?>/assets/css/images/dummy_gplus.png"
           },
           twitter : {
-            'dummy_img' : "<?php get_theme_root(); ?>/assets/css/images/dummy_twitter.png",
+            'dummy_img' : "<?php echo home_url(); ?>/assets/css/images/dummy_twitter.png",
             'tweet_text' : "<?php echo get_the_title($ID); ?>"
           }
         },
-        'css_path' : "<?php get_theme_root(); ?>/assets/css/socialshareprivacy.css",
+        'css_path' : "<?php echo home_url(); ?>/assets/css/socialshareprivacy.css",
         'uri' : "<?php echo get_permalink(); ?>",
         'shorturi' : "<?php echo $shortlink; ?>"
       });
