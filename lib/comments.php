@@ -2,12 +2,12 @@
 /**
  * Use Bootstrap's media object for listing comments
  *
- * @link http://twitter.github.com/bootstrap/components.html#media
+ * @link http://getbootstrap.com/components/#media
  */
 class Roots_Walker_Comment extends Walker_Comment {
   function start_lvl(&$output, $depth = 0, $args = array()) {
     $GLOBALS['comment_depth'] = $depth + 1; ?>
-    <ul <?php comment_class('media unstyled comment-' . get_comment_ID()); ?>>
+    <ul <?php comment_class('media list-unstyled comment-' . get_comment_ID()); ?>>
     <?php
   }
 
