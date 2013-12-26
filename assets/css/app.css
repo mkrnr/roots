@@ -14,7 +14,7 @@
 }
 
 .navbar-search{
-  width: 167px;
+  width: 165px;
 }
 
 .theme-info{
@@ -156,6 +156,45 @@ a:focus {
   padding: 0;
   margin-left: 0px;
   list-style-type: none ;
+}
+
+/* For Swipe */
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+
+.swipe .nav {
+	position: absolute;
+	width: 80px;
+	height: 38px;
+	z-index: 10;
+	text-align: center;
+	line-height: 40px;
+	display: inline-block;
+	color: #fff;
+	top: 45%;
+	cursor: pointer;
+	background-color: rgba(0,0,0,0.8)
+}
+.swipe .nav.next {
+	right: 0;
+	-webkit-border-radius: 3px 0 0 3px;
+	border-radius: 3px 0 0 3px;
+}
+.swipe .nav.prev {
+	-webkit-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
 }
 
 /* ==========================================================================

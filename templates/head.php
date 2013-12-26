@@ -53,4 +53,24 @@
     }
   });
   </script>
+
+  <script type="text/javascript" src="<?php echo home_url(); ?>/assets/js/swipe/swipe.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      ob = new Swipe(document.getElementById('slider'), {
+        startSlide: 0,
+        speed: 400,
+        auto: 3000,
+        continuous: true,
+        disableScroll: false,
+        stopPropagation: false,
+        callback: function(index, elem) {},
+        transitionEnd: function(index, elem) {}
+      });
+
+      $('.next').on('click', ob.next);
+      $('.prev').on('click', ob.prev);
+    });
+  </script>
 </head>
