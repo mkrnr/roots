@@ -58,19 +58,37 @@
 
   <script type="text/javascript">
     $(document).ready(function(){
-      ob = new Swipe(document.getElementById('slider'), {
-        startSlide: 0,
-        speed: 400,
-        auto: 3000,
-        continuous: true,
-        disableScroll: false,
-        stopPropagation: false,
-        callback: function(index, elem) {},
-        transitionEnd: function(index, elem) {}
-      });
+      var swipes = [];
+      $('.swipe').each(function(i, obj) {
+        /* derived from https://github.com/bradbirdsall/Swipe/issues/293 */
 
-      $('.next').on('click', ob.next);
-      $('.prev').on('click', ob.prev);
+        var currentsliderid = $(obj,this).attr('id');
+        var currentslidercontrol = $('#' + currentsliderid);
+
+        /* initiate the just toggled swipejs container */
+
+        swipes[i] = $('#' + currentsliderid).Swipe({
+            startSlide: 0,
+            speed: 400,
+            auto: 3000,
+            continuous: true,
+            disableScroll: false,
+            stopPropagation: false,
+            callback: function(index, elem) {},
+            transitionEnd: function(index, elem) {}
+          }).data('Swipe');
+        swipes[i].setup();
+
+        /* previous and next buttons	*/
+
+        $('.prev', currentslidercontrol).click(function() {
+          swipes[i].prev();
+        });
+        $('.next', currentslidercontrol).click(function() {
+          swipes[i].next();
+
+        });
+      });
     });
   </script>
 </head>
