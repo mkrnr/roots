@@ -2,6 +2,11 @@
    Changes by mkoerner
 =========== */
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 
 .header-images{
   margin-top: 8px;
@@ -189,12 +194,12 @@ a:focus {
 }
 .swipe .nav.next {
 	right: 0;
-	-webkit-border-radius: 3px 0 0 3px;
-	border-radius: 3px 0 0 3px;
+	-webkit-border-radius: 4px 0 0 4px;
+	border-radius: 4px 0 0 4px;
 }
 .swipe .nav.prev {
-	-webkit-border-radius: 0 3px 3px 0;
-	border-radius: 0 3px 3px 0;
+	-webkit-border-radius: 0 4px 4px 0;
+	border-radius: 0 4px 4px 0;
 }
 
 /* ==========================================================================
