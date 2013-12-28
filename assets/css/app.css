@@ -2,6 +2,11 @@
    Changes by mkoerner
 =========== */
 
+/* for private password field */
+input.input {
+  width: 260px !important;
+}
+
 img {
   display: block;
   max-width: 100%;
