@@ -70,7 +70,7 @@
         swipes[i] = $('#' + currentsliderid).Swipe({
             startSlide: 0,
             speed: 400,
-            auto: 3000,
+            auto: 5000,
             continuous: true,
             disableScroll: false,
             stopPropagation: false,
